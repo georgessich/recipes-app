@@ -1,0 +1,16 @@
+
+.header__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+.header__menu-items {
+    display: flex;
+    gap: 65px;
+}
+
+.header__menu-link {
+    font-family: 'DM Sans';
+    color: #000000;
+}

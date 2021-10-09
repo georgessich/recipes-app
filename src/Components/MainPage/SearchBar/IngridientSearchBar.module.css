@@ -1,0 +1,34 @@
+.searchform {
+    margin-top: 50px;
+    display: flex;
+    padding-left: 10px;
+    align-items: center;
+}
+
+.search__label {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.searchform__input {
+    background: #FFFFFF;
+border: 2px solid #FFDC72;
+border-radius: 12px;
+padding: 7px 36px;
+}
+
+.searchform__input:active,
+.searchform__input:focus {
+    outline:none;
+    border: 2px solid #ffdc50;
+}
+
+.searchbtn {
+    background-color: transparent;
+    border: none;
+}

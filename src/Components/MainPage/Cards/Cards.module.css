@@ -1,0 +1,13 @@
+.cards {
+    background-color: #fff;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    display: flex;
+    width: 1000px;
+}
+
+.cards_recipes {
+    display: flex;
+    gap:65px;
+    flex-wrap: wrap;
+}

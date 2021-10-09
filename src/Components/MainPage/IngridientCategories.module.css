@@ -1,0 +1,17 @@
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    transition: all 0.3s ease-in;
+    padding: 50px 10px;
+}
+
+.categories__btn {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    margin-right: 250px;
+    cursor: pointer;
+    padding-right: 5px;
+}
