@@ -2,7 +2,9 @@ import { useEffect, useState} from 'react';
 import classes from './Cards.module.css';
 import Card from './Card';
 import ReactPaginate from 'react-paginate';
-const Cards = () => {
+
+
+const Cards = (props) => {
     let numOfRecipes = 12;
     const [ recipes, setRecipes ] = useState([]);
     const [ httpError, setHttpError ] = useState();
@@ -10,7 +12,7 @@ const Cards = () => {
    const [pageCount, setPageCount] = useState(1)
     useEffect(() => {
         const getRecipes = async () => {
-            const response = await fetch(`https://api.spoonacular.com/recipes/complexSearch?query=burger&number=12&offset=0&addRecipeInformation=true&sort=time&apiKey=00963ead543544ac90beddb936f6a7ac`);
+            const response = await fetch(`https://api.spoonacular.com/recipes/complexSearch?query=${props.searchQuery}&number=12&offset=0&addRecipeInformation=true&sort=time&apiKey=00963ead543544ac90beddb936f6a7ac`);
             if(!response.ok) {
                 throw new Error ('Ooops!');
             }
@@ -19,6 +21,8 @@ const Cards = () => {
             const loadedRecipes = [];
             const results = responseData.results;
             const totalResults = responseData.totalResults;
+            setTotalAmount(totalResults);
+            setPageCount(Math.ceil(amount / numOfRecipes));
             for(const key in results) {
                 
                 loadedRecipes.push({
@@ -33,8 +37,7 @@ const Cards = () => {
 
                 })
             }
-            setTotalAmount(totalResults);
-            setPageCount(Math.ceil(amount / numOfRecipes));
+           
             setRecipes(loadedRecipes);
             
             console.log(results);
@@ -46,11 +49,11 @@ const Cards = () => {
         getRecipes().catch((error) => {
             setHttpError(error.message);
         })
-    }, [numOfRecipes]);
+    }, [numOfRecipes, amount, pageCount]);
 
     const fetchRecipes = async (currentPage) => {
         const response = await fetch(
-            `https://api.spoonacular.com/recipes/complexSearch?query=burger&number=12&offset=${currentPage}&addRecipeInformation=true&sort=time&apiKey=00963ead543544ac90beddb936f6a7ac`
+            `https://api.spoonacular.com/recipes/complexSearch?number=12&offset=${currentPage}&addRecipeInformation=true&sort=time&apiKey=00963ead543544ac90beddb936f6a7ac`
         )
         const responseData = await response.json();
         const loadedRecipes = [];
@@ -78,6 +81,8 @@ const Cards = () => {
         console.log(recipesNextPage);
         console.log(currentPage);
     }
+
+    
 
     if(httpError) {
         return <section>
