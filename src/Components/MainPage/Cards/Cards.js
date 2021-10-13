@@ -102,7 +102,8 @@ const Cards = (props) => {
                 vegan={recipe.vegan}
                 healthScore={recipe.healthScore}
                 dairyFree={recipe.dairyFree}
-                glutenFree={recipe.glutenFree} />
+                glutenFree={recipe.glutenFree} 
+                pageId={props.pageId} setPageId={props.setPageId} />
             ))}
             </ul>
             <ReactPaginate onPageChange={handlePageClick}

@@ -3,7 +3,7 @@ import CardsMenu from './CardsMenu';
 import Cards from './Cards';
 
 
-const CardsPage = () => {
+const CardsPage = (props) => {
     const { search } = window.location;
     const query = new URLSearchParams(search).get('s');
     const [ searchQuery, setSearchQuery ] = useState(query || '');
@@ -12,7 +12,7 @@ const CardsPage = () => {
         <section>
             <CardsMenu searchQuery={searchQuery}
             setSearchQuery={setSearchQuery}/>
-            <Cards searchQuery={searchQuery}/>
+            <Cards pageId={props.pageId} setPageId={props.setPageId} searchQuery={searchQuery}/>
         </section>
     )
 }

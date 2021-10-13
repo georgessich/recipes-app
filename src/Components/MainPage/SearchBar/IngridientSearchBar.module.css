@@ -3,8 +3,17 @@
     display: flex;
     padding-left: 10px;
     align-items: center;
+    position: relative;
 }
 
+.searchform::before {
+    content: "";
+    width: 95%;
+    height: 3px;
+    background-color: #ffdc72;
+    position: absolute;
+    margin-top: -66px;
+}
 .search__label {
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
@@ -29,6 +38,29 @@ padding: 7px 36px;
 }
 
 .searchbtn {
+    background-color: transparent;
+    border: none;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.tag {
+    background-color: #fff;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 14px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.tag-btn {
     background-color: transparent;
     border: none;
 }
