@@ -1,0 +1,18 @@
+.recipecard {
+    padding: 28px;
+    display: flex;
+}
+
+.recipecard__img {
+    border-radius: 12px;
+    margin-right: 32px;
+}
+
+.recipecard__summary {
+    background-color: #f8fbff;
+    border-radius: 12px;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 14px;
+    padding: 20px;
+}

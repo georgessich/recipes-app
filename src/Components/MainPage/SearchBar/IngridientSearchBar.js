@@ -17,8 +17,9 @@ const IngridientSearchBar = () => {
       e.preventDefault();
       setTags(prevState => [...prevState, trimmedInput]);
       setInput('');
-    }
-    if (key === "Backspace" && !input.length && tags.length) {
+      console.log(tags);
+    } 
+    if (key === "Backspace" && !input.length && tags.length && isKeyReleased) {
         e.preventDefault();
         const tagsCopy = [...tags];
         const poppedTag = tagsCopy.pop();

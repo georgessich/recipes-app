@@ -49,7 +49,7 @@ const Cards = (props) => {
         getRecipes().catch((error) => {
             setHttpError(error.message);
         })
-    }, [numOfRecipes, amount, pageCount]);
+    }, [amount, pageCount]);
 
     const fetchRecipes = async (currentPage) => {
         const response = await fetch(

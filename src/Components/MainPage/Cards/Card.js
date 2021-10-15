@@ -9,7 +9,7 @@ const Card = (props) => {
   return (
     <div className={classes.card}>
       <img className={classes.cardimg} src={props.img} />
-  <Link to={`recipeapp/recipes/${props.id}`} onClick={() => props.setPageId(props.id)} className={classes.cardtitle}>{props.title}</Link>
+  <Link to={`/recipeapp/recipes/${props.id}`} onClick={() => props.setPageId(props.id)} className={classes.cardtitle}>{props.title}</Link>
       <span>prep.time: {props.readyInMinutes}min</span>
       <div className={classes.cardicons}>
         {props.vegan && <IconVegan />}

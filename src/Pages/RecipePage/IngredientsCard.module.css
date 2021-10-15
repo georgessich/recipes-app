@@ -1,0 +1,12 @@
+.ingredientscard {
+    background-color: #fff5d7;
+    border-radius: 12px;
+    height: 107px;
+    width: 1018px;
+    margin: 0 auto;
+    background: linear-gradient(360deg, rgba(255, 245, 215, 0) 24.77%, rgba(255, 245, 215, 0.2) 32.62%, rgba(255, 245, 215, 0.368) 39.21%, rgba(255, 245, 215, 0.576) 47.37%, rgba(255, 245, 215, 0.784) 55.53%, #FFF5D7 64.01%);
+}
+
+.ingredientscard-btn {
+    margin: 0 auto;
+}
