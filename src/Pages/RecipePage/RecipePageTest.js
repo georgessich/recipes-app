@@ -7,6 +7,7 @@ const RecipePageTest = (props) => {
   const [getRecipe, setGetRecipe] = useState({});
   const [httpError, setHttpError] = useState();
   const [getIngredient, setGetIngredient] = useState([]);
+  const [steps, setSteps] = useState([]);
   useEffect(() => {
     const getRecipeById = async () => {
       const response = await fetch(
@@ -18,22 +19,32 @@ const RecipePageTest = (props) => {
       const responseData = await response.json();
       setGetRecipe(responseData);
       const loadedIngredients = [];
+      const loadedSteps = [];
       const ingredientsData = responseData.extendedIngredients;
+      const stepsData = responseData.analyzedInstructions[0].steps;
       for (const key in ingredientsData) {
         loadedIngredients.push({
           id: key,
           name: ingredientsData[key].original,
         });
       }
+      for (const key in stepsData) {
+        loadedSteps.push({
+          id: key,
+          number: stepsData[key].number,
+          step: stepsData[key].step
+        })
+      }
       setGetIngredient(loadedIngredients);
       console.log(loadedIngredients);
+      setSteps(loadedSteps);
+      console.log(loadedSteps);
     };
     getRecipeById().catch((error) => {
       setHttpError(error.message);
     });
   }, []);
-  console.log(getRecipe.analyzedInstructions[0].steps);
-  const steps = getRecipe.analyzedInstructions[0].steps;
+  // const steps = getRecipe.analyzedInstructions[0].steps;
   if (httpError) {
     return (
       <section>
