@@ -1,6 +1,7 @@
 import classes from "./IngridientSearchBar.module.css";
 import { useState } from 'react';
 import SearchAddBtn from "./SearchAddBtn";
+
 const IngridientSearchBar = () => {
   const [input, setInput] = useState("");
   const [tags, setTags] = useState([]);
@@ -17,7 +18,6 @@ const IngridientSearchBar = () => {
       e.preventDefault();
       setTags(prevState => [...prevState, trimmedInput]);
       setInput('');
-      console.log(tags);
     } 
     if (key === "Backspace" && !input.length && tags.length && isKeyReleased) {
         e.preventDefault();
@@ -39,12 +39,11 @@ const IngridientSearchBar = () => {
         const trimmedInput = input.trim();
         setTags(prevState => [...prevState, trimmedInput]);
         setInput('');
-        
-
   }
 
   const deleteTag = (index) => {
     setTags(prevState => prevState.filter((tag, i) => i !== index))
+
   }
   return (
     <div>
