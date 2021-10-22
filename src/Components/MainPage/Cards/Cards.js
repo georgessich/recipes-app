@@ -1,23 +1,23 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import classes from "./Cards.module.css";
 import Card from "./Card";
 import ReactPaginate from "react-paginate";
-
+import SearchContext from '../MainContext/main-context';
 const Cards = (props) => {
   let numOfRecipes = 12;
   const [recipes, setRecipes] = useState([]);
   const [httpError, setHttpError] = useState();
   const [amount, setTotalAmount] = useState(0);
   const [pageCount, setPageCount] = useState(1);
+  const { addIngredients } = useContext(SearchContext);
   useEffect(() => {
     const getRecipes = async () => {
       const response = await fetch(
-        `https://api.spoonacular.com/recipes/complexSearch?query=${props.searchQuery}&type=${props.course}&cuisine=${props.cuisine}&intolerances=${props.intolerance}&diet=${props.diet}&sort=${props.sortButton}&number=12&offset=0&addRecipeInformation=true&apiKey=00963ead543544ac90beddb936f6a7ac`
+        `https://api.spoonacular.com/recipes/complexSearch?query=${props.searchQuery}&type=${props.course}&=includeIngredients=${addIngredients.toString()}&cuisine=${props.cuisine}&intolerances=${props.intolerance}&diet=${props.diet}&sort=${props.sortButton}&number=12&offset=0&addRecipeInformation=true&apiKey=00963ead543544ac90beddb936f6a7ac`
       );
       if (!response.ok) {
         throw new Error("Ooops!");
       }
-
       const responseData = await response.json();
       const loadedRecipes = [];
       const results = responseData.results;
@@ -49,11 +49,11 @@ const Cards = (props) => {
     getRecipes().catch((error) => {
       setHttpError(error.message);
     });
-  }, [amount, pageCount, props.searchQuery, props.course, props.cuisine, props.diet, props.intolerance, props.sortButton]);
+  }, [amount, addIngredients, pageCount, props.searchQuery, props.course, props.cuisine, props.diet, props.intolerance, props.sortButton]);
 
   const fetchRecipes = async (currentPage) => {
     const response = await fetch(
-      `https://api.spoonacular.com/recipes/complexSearch?number=12&offset=${currentPage}&addRecipeInformation=true&sort=time&apiKey=00963ead543544ac90beddb936f6a7ac`
+      `https://api.spoonacular.com/recipes/complexSearch?query=${props.searchQuery}&type=${props.course}&includeIngredients=${addIngredients.toString()}&cuisine=${props.cuisine}&intolerances=${props.intolerance}&diet=${props.diet}&sort=${props.sortButton}&number=12&offset=${currentPage}&addRecipeInformation=true&apiKey=00963ead543544ac90beddb936f6a7ac`
     );
     const responseData = await response.json();
     const loadedRecipes = [];

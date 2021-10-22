@@ -1,5 +1,4 @@
 import IngridientSearchBar from './SearchBar/IngridientSearchBar';
-import IngridientCategories from './IngridientCategories';
 import classes from './Ingridients.module.css';
 const Ingridients = () => {
     return (
@@ -8,7 +7,6 @@ const Ingridients = () => {
                 <h3>Your Ingredients</h3>
             </div>
             <IngridientSearchBar />
-            <IngridientCategories />
         </div>
     )
 }
