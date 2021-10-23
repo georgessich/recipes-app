@@ -1,0 +1,32 @@
+.help__menu {
+    padding: 20px 60px 20px 40px;
+    background-color: #fff5d7;
+    border-radius: 12px;
+    margin-right: 61px;
+    height: 100%;
+}
+
+.help__link {
+    font-weight: 400;
+    font-size: 16px;
+    color: #000000;
+    position: relative;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.help__link-active {
+    font-weight: 600;
+}
+
+.help__link-active::before {
+    content: "";
+    position: absolute;
+    top:5px;
+    left: -27px;
+    width: 12px;
+    height: 12px;
+    background-color: #ffd92e;
+    border-radius: 50%;
+}
+

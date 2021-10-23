@@ -13,4 +13,9 @@
 .header__menu-link {
     font-family: 'DM Sans';
     color: #000000;
+    font-weight: 400;
+}
+
+.header__link-active {
+    font-weight: 600;
 }

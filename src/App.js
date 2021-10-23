@@ -5,6 +5,7 @@ import './App.css';
 import MainPage from './Pages/MainPage';
 import RecipePageTest from './Pages/RecipePage/RecipePageTest';
 import Blog from './Pages/Blog/Blog';
+import Help from './Pages/Help/Help';
 function App() {
 
   const [pageId, setPageId] = useState('');
@@ -15,7 +16,7 @@ function App() {
           <MainPage  pageId={pageId} setPageId={setPageId}/>
         </Route>
         <Route path="/recipeapp/blog"><Blog /></Route>
-        <Route path="/recipeapp/help"><RecipePageTest /></Route>
+        <Route path="/recipeapp/help/"><Help /></Route>
         <Route path="/recipeapp/recipes/:id"><RecipePageTest  pageId={pageId}/></Route>
       </Switch>
     </Layout>

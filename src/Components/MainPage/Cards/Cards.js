@@ -13,7 +13,7 @@ const Cards = (props) => {
   useEffect(() => {
     const getRecipes = async () => {
       const response = await fetch(
-        `https://api.spoonacular.com/recipes/complexSearch?query=${props.searchQuery}&type=${props.course}&=includeIngredients=${addIngredients.toString()}&cuisine=${props.cuisine}&intolerances=${props.intolerance}&diet=${props.diet}&sort=${props.sortButton}&number=12&offset=0&addRecipeInformation=true&apiKey=00963ead543544ac90beddb936f6a7ac`
+        `https://api.spoonacular.com/recipes/complexSearch?query=${props.searchQuery}&type=${props.course}&includeIngredients=${addIngredients.toString()}&cuisine=${props.cuisine}&intolerances=${props.intolerance}&diet=${props.diet}&sort=${props.sortButton}&number=12&offset=0&addRecipeInformation=true&apiKey=00963ead543544ac90beddb936f6a7ac`
       );
       if (!response.ok) {
         throw new Error("Ooops!");
