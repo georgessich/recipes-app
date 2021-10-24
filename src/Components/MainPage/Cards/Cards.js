@@ -80,6 +80,12 @@ const Cards = (props) => {
     console.log(currentPage);
   };
 
+  if(amount === 0) {
+    return <section>
+      <p>Can't find anything</p>
+    </section>
+  }
+
   if (httpError) {
     return (
       <section>

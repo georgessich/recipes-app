@@ -14,6 +14,7 @@
 
 .help__question-block {
     border-top: 3px dashed #CCE2FF;
+    padding-top: 15px;
 }
 
 .help__question-quest {

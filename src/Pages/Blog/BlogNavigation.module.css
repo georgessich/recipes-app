@@ -1,0 +1,41 @@
+.blog_navigation {
+    background-color: #fff5d7;
+    border-radius: 12px;
+    padding: 12px 18px;
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    height: 620px;
+}
+
+.blog_navigation-title {
+    font-size: 18px;
+    font-weight: 700;
+    padding-bottom: 12px;
+    border-bottom: 3px dashed #ffd92e;
+}
+
+.blog_navigation-filters {
+    margin-top: 12px;
+}
+
+.blog_navigation-tagtitle {
+    margin-top: 12px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.blog_navigation-tags {
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.blog_navigation-tag {
+    padding: 4px 12px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    font-size: 14px;
+    cursor: pointer;
+}
