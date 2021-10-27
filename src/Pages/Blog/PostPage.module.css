@@ -1,0 +1,47 @@
+.postPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 900px;
+}
+
+.postPage-title {
+    font-family: 'Open Sans';
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.postPage-info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 52px;
+}
+.postPage-author {
+    font-weight: 700;
+    font-size: 14px;
+}
+.postPage-date {
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(0, 0, 0, .5);
+}
+.postPage-tag {
+    font-size: 14px;
+    padding: 4px 12px;
+    background-color: #fff;
+    border-radius: 12px;
+}
+.postPage-post {
+    display: flex;
+    gap: 50px;
+}
+.postPage-img {
+    width: 398px;
+    height: 398px;
+}
+.postPage-text {
+    font-size: 18px;
+}

@@ -1,10 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import photo1 from "../../images/1.png";
 import photo2 from "../../images/2.png";
 import photo3 from "../../images/3.png";
 import photo4 from "../../images/4.png";
 import classes from "./Blog.module.css";
 import BlogNavigation from './BlogNavigation';
+import {Link} from 'react-router-dom';
+import BlogContext from './BlogContext/blog-context';
 const posts = [
   {
     id: 1,
@@ -46,11 +48,12 @@ const posts = [
       tag: "Featured"
   },
 ];
-const Blog = () => {
+const Blog = (props) => {
     const [authorsChoice, setAuthorsChoice] = useState("");
     const [tagsChoice, setTagsChoice] = useState("");
     const [filterPosts, setFilterPosts] = useState(posts);
     const [date, setDate] = useState([]);
+    const {blogPage, setBlogPage} = useContext(BlogContext);
   
 useEffect(() => {
   if (authorsChoice.length === 0 && tagsChoice === 0) {
@@ -66,8 +69,8 @@ useEffect(() => {
     setFilterPosts(tagsFilter);
     setTagsChoice("");
   }
-  if(date[0] > 0 || date[1] > 0){
-    const dateFilter = posts.filter(post => date[0] > post.date || post.date < date[1] )
+  if(date[0] > 0 && date[1] > 0){
+    const dateFilter = posts.filter(post => date[0] < post.date && post.date < date[1] )
     console.log(date);
     console.log(dateFilter);
     setFilterPosts(dateFilter);
@@ -85,9 +88,15 @@ useEffect(() => {
           tag: posts[key].tag
       })
   }
+  
   const BlogPost = () => {
-    
- 
+   
+    const goToPage = (post) => {
+      props.setPostPageId(post.id);
+      setBlogPage(post)
+      console.log(post);
+      console.log(blogPage);
+    }
     return (
       filterPosts.map((post) => (
         <div className={classes.post} key={post.id}>
@@ -97,7 +106,7 @@ useEffect(() => {
             alt={post.title}
           />
           <div className={classes.post__text}>
-            <span className={classes.post__title}>{post.title}</span>
+            <Link to={`/recipeapp/blog/${post.id}/`} onClick={() => goToPage(post)} className={classes.post__title}>{post.title}</Link>
             <div className={classes.post__data}>
               <span className={classes.post__author}>{post.author}</span>
               <span className={classes.post__date}>{post.date.toDateString()}</span>
