@@ -37,5 +37,13 @@
     background-color: #ffffff;
     border-radius: 12px;
     font-size: 14px;
+}
+
+.blog_navigation-tag input {
+    opacity: 0;
+}
+
+.blog_navigation-tag label {
+    margin-left: -14px;
     cursor: pointer;
 }
