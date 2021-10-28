@@ -22,6 +22,14 @@ function App() {
         <Route path="/" exact>
           <MainPage pageId={pageId} setPageId={setPageId} />
         </Route>
+        
+
+        <Route path="/recipeapp/help/">
+          <Help />
+        </Route>
+        <Route path="/recipeapp/recipes/:id">
+          <RecipePageTest pageId={pageId} />
+        </Route>
         <BlogContext.Provider value={value}>
           <Route path="/recipeapp/blog" exact>
             <Blog postPageId={postPageId} setPostPageId={setPostPageId} />
@@ -30,13 +38,6 @@ function App() {
             <PostPage postPageId={postPageId} />
           </Route>
         </BlogContext.Provider>
-
-        <Route path="/recipeapp/help/">
-          <Help />
-        </Route>
-        <Route path="/recipeapp/recipes/:id">
-          <RecipePageTest pageId={pageId} />
-        </Route>
       </Switch>
     </Layout>
   );
