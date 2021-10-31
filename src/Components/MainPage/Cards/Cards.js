@@ -109,6 +109,8 @@ const Cards = (props) => {
             glutenFree={recipe.glutenFree}
             pageId={props.pageId}
             setPageId={props.setPageId}
+            addFavs={props.addFavs}
+            recipe={recipe}
           />
         ))}
       </ul>

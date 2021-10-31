@@ -14,7 +14,7 @@ const MainPage = (props) => {
     <SearchContext.Provider value={value}>
       <div className={classes.mainpage}>
         <Ingridients />
-        <CardsPage pageId={props.pageId} setPageId={props.setPageId} />
+        <CardsPage addFavs={props.addFavs} pageId={props.pageId} setPageId={props.setPageId} />
       </div>
     </SearchContext.Provider>
   );

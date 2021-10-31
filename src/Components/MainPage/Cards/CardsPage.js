@@ -51,6 +51,7 @@ const CardsPage = (props) => {
         minCalories={minCalories}
         maxCalories={maxCalories}
         sortButton={sortButton}
+        addFavs={props.addFavs}
       />
     </section>
   );
