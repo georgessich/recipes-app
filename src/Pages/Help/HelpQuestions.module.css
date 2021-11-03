@@ -25,3 +25,10 @@
     font-weight: 400;
     font-size: 16px;
 }
+
+
+@media (max-width: 440px) {
+    .help__question {
+        width: 380px;
+    }
+}

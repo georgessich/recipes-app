@@ -93,3 +93,17 @@
     background-color: transparent;
     cursor: pointer;
 }
+
+@media (max-width: 440px) {
+    .favourites__disp {
+        flex-direction: column;
+    }
+
+    .favourites__menu {
+        margin-left: 0;
+    }
+
+    .fav__sect {
+        margin-left: 35px;
+    }
+}

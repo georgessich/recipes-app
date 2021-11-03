@@ -97,3 +97,14 @@
   
 
 }
+
+@media (max-width: 440px) {
+    .cardsmenufilters {
+        width: 412px;
+        margin-left: 15px;
+    }
+    .cardsmenufilters-buttons {
+        flex-wrap: wrap;
+        width: 405px;
+    }
+}

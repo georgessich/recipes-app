@@ -2,3 +2,14 @@
     margin: 0 auto;
     width: 1440px;
 }
+
+@media (max-width: 1440px) {
+    .layout {
+        width: 1330px;
+    }
+}
+@media (max-width: 440px) {
+    .layout {
+        width: 420px;
+    }
+}

@@ -64,3 +64,9 @@ padding: 7px 36px;
     background-color: transparent;
     border: none;
 }
+
+@media (max-width: 440px) {
+    .ingredients_sb {
+       
+    }
+}

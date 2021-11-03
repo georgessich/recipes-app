@@ -16,3 +16,16 @@
     font-size: 14px;
     padding: 20px;
 }
+
+@media(max-width: 440px) {
+
+    .recipecard {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .recipecard__img {
+        width: 356px;
+        height: 196px;
+    }
+}

@@ -47,3 +47,21 @@
         opacity:1;
     }
 }
+
+
+@media (max-width: 440px) {
+  .cardtitle {
+    width: 185px;
+  }
+  .cardimg {
+    width: 141px;
+    height: 152px;
+  }
+  .cardicons {
+    left: 80%;
+  }
+
+  .cardbtn {
+    left: 57%;
+  }
+}

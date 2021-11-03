@@ -28,7 +28,7 @@ const IngridientSearchBar = () => {
     console.log(addIngredients)
   }
   return (
-    <div>
+    <div className={classes.ingredients_sb}>
       <div className={classes.tags}>
         {tags.map((tag, index) => (
           <div  key={index} className={classes.tag}>{tag} <button className={classes['tag-btn']} onClick={() => deleteTag(index)}>x</button></div>

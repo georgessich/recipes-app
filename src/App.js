@@ -40,7 +40,7 @@ function App() {
   return (
     <Layout>
       <Switch>
-        <Route path="/" exact>
+        <Route path="/recipes-app/" exact>
           <MainPage
             pageId={pageId}
             setPageId={setPageId}

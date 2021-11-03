@@ -23,8 +23,10 @@ const IngredientsCard = (props) => {
   }
   return (
     <div className={classes['ingregients-container']}>
+       
       <div
         className={classes.ingredientscard}
+       
         style={{ height: `${heightIncrease}` }}
       >
         <span className={classes["ingredientscard-title"]}>Ingredients</span>

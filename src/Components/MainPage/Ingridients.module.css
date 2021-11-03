@@ -12,3 +12,43 @@
     font-size: 18px;
     padding: 1px 20px;
 }
+
+@media (max-width: 440px) {
+    .ingridients {
+        position: fixed;
+        border-radius: 12px;
+        background-color: #fff5d7;
+        bottom: 0;
+        width: 100%;
+        margin: 0 auto;
+        height: 0;
+        z-index: 50;
+        cursor: pointer;
+    }
+
+  .--activeingr {
+        top: 20%;
+        height: 75vh;
+        width: 95%;
+        left: 3%;
+    }
+    .ingridients__header {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        clip-path: ellipse(50% 100% at 50% 100%);
+        font-size: 16px;
+        cursor: pointer;
+        margin-left: -25px;
+    }
+    .--active {
+        position: initial;
+        bottom: initial;
+        margin-left: 0;
+        clip-path: initial;
+    }
+}

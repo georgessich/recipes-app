@@ -38,3 +38,10 @@
     top:10px;
     left: 55px;
 }
+
+@media(max-width: 440px) {
+    .cardsmenu {
+        width: auto;
+        margin-left: 15px;
+    }
+}

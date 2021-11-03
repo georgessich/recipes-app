@@ -16,3 +16,10 @@
     display: flex;
     justify-content: center;
 }
+
+@media (max-width: 440px) {
+    .help {
+        flex-direction: column;
+        gap: 30px;
+    }
+}

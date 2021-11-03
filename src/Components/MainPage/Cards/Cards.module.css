@@ -1,45 +1,62 @@
 .cards {
-    padding-top: 5px;
-    background-color: #fff;
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-    width: 1000px;
+  padding-top: 5px;
+  background-color: #fff;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  width: 1000px;
 }
 
 .cards_recipes {
-    display: flex;
-    padding-top: 40px;
-    gap:65px;
-    flex-wrap: wrap;
+  display: flex;
+  padding-top: 40px;
+  gap: 65px;
+  flex-wrap: wrap;
 }
 
 .pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap:42px;
-    margin-top: 50px;
-    padding-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 42px;
+  margin-top: 50px;
+  padding-bottom: 50px;
 }
 
 .pagination__page {
-    font-family: 'DM Sans';
-    font-weight: 700;
-    font-size: 20px;
-    color: rgba(0, 0, 0, .4);
-    cursor: pointer;
+  font-family: "DM Sans";
+  font-weight: 700;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
 }
 
 .pagination__page:active {
-    color:rgba(0, 0, 0, 1);
+  color: rgba(0, 0, 0, 1);
 }
 
 .pagination__active {
-    color:#000;
+  color: #000;
 }
 
-.pagination__prev{
-    font-size: 20px;
-    color: #bbcaf2;
-    cursor: pointer;
+.pagination__prev {
+  font-size: 20px;
+  color: #bbcaf2;
+  cursor: pointer;
+}
+
+@media (max-width: 440px) {
+  .cards {
+    background-color: transparent;
+    width: 420px;
+  }
+  .cards_recipes {
+    width: 405px;
+    gap: 35px;
+    padding-top: 0;
+  }
+  .pagination {
+      gap: 20px;
+      z-index: 1000;
+      padding-bottom: 80px;
+  }
 }

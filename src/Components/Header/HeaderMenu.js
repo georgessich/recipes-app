@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 const HeaderMenu = () => {
     return (
         <div className={classes.header__menu}>
-            <NavLink to="/"exact><HeaderMenuLogo/></NavLink>
+            <NavLink to="/recipes-app/"exact><HeaderMenuLogo/></NavLink>
             
             <nav>
                 <ul className={classes['header__menu-items']}>

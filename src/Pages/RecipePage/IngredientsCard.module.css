@@ -73,3 +73,17 @@
   align-items: center;
   gap: 5px;
 }
+
+@media (max-width: 440px) {
+
+  .ingredientscard {
+    width: 90%;
+    left:5%;
+  }
+
+  .ingredientscard-btn {
+    width: 90%;
+    left: 10%;
+    justify-content: center;
+  }
+}

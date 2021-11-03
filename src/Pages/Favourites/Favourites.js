@@ -47,7 +47,7 @@ const Favourites = (props) => {
     );
   };
   return (
-    <section>
+    <section className={classes.fav__sect}>
       <div className={classes["favourites__title-frame"]}>
         <span className={classes.favourites__title}>User Area</span>
       </div>

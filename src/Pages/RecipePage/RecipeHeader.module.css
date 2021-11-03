@@ -23,3 +23,20 @@
     font-size: 14px;
     color: #000000;
 }
+
+@media (max-width: 440px) {
+    .recipeheader {
+        margin-left: 25px;
+        width: 366px;
+    }
+
+    .recipeheader__title {
+        font-size: 20px;
+        padding: 13px;
+    }
+
+    .recipeheader__prep, .recipeheader__time {
+        display: none;
+    }
+
+}

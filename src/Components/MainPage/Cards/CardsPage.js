@@ -21,7 +21,7 @@ const CardsPage = (props) => {
   const [maxCalories, setMaxCalories] = useState(maxCaloriesSearch || "");
   const [sortButton, setSortButton] = useState(sortBy || "popularity");
   return (
-    <section>
+    <section >
       <CardsMenu
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}

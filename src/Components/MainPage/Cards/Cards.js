@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState, useContext, useMemo } from "react";
 import classes from "./Cards.module.css";
 import Card from "./Card";
 import ReactPaginate from "react-paginate";
@@ -10,6 +10,7 @@ const Cards = (props) => {
   const [amount, setTotalAmount] = useState(0);
   const [pageCount, setPageCount] = useState(1);
   const { addIngredients } = useContext(SearchContext);
+  const memoizedRecipes = useMemo(() => ([recipes, setRecipes]), [recipes]);
   useEffect(() => {
     const getRecipes = async () => {
       const response = await fetch(
@@ -93,10 +94,11 @@ const Cards = (props) => {
       </section>
     );
   }
+  console.log(memoizedRecipes)
   return (
     <div className={classes.cards}>
       <ul className={classes.cards_recipes}>
-        {recipes.map((recipe) => (
+        {memoizedRecipes[0].map((recipe) => (
           <Card
             key={recipe.id}
             id={recipe.id}
