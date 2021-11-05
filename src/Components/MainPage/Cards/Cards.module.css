@@ -44,6 +44,16 @@
   cursor: pointer;
 }
 
+.cards__error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin-top: 10%;
+}
+
 @media (max-width: 440px) {
   .cards {
     background-color: transparent;
@@ -55,8 +65,13 @@
     padding-top: 0;
   }
   .pagination {
-      gap: 20px;
-      z-index: 1000;
-      padding-bottom: 80px;
+    gap: 20px;
+    z-index: 1000;
+    padding-bottom: 80px;
+  }
+
+  .cards__error img{
+    width: 80%;
+    
   }
 }

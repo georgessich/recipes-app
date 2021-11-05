@@ -21,9 +21,9 @@
         bottom: 0;
         width: 100%;
         margin: 0 auto;
-        height: 0;
         z-index: 50;
         cursor: pointer;
+        transition: all .5s ease-in;
     }
 
   .--activeingr {

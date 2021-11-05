@@ -2,19 +2,30 @@ import { useEffect, useState, useContext, useMemo } from "react";
 import classes from "./Cards.module.css";
 import Card from "./Card";
 import ReactPaginate from "react-paginate";
-import SearchContext from '../MainContext/main-context';
+import SearchContext from "../MainContext/main-context";
+import LoadingSpinner from "../../../Components/LoadingSpinner/LoadingSpinner";
+import photo from "../../../images/istockphoto-684539464-612x612.jpg";
 const Cards = (props) => {
   let numOfRecipes = 12;
   const [recipes, setRecipes] = useState([]);
   const [httpError, setHttpError] = useState();
+  const [isLoading, setIsLoading] = useState(true);
   const [amount, setTotalAmount] = useState(0);
   const [pageCount, setPageCount] = useState(1);
   const { addIngredients } = useContext(SearchContext);
-  const memoizedRecipes = useMemo(() => ([recipes, setRecipes]), [recipes]);
+  const memoizedRecipes = useMemo(() => [recipes, setRecipes], [recipes]);
   useEffect(() => {
     const getRecipes = async () => {
       const response = await fetch(
-        `https://api.spoonacular.com/recipes/complexSearch?query=${props.searchQuery}&type=${props.course}&includeIngredients=${addIngredients.toString()}&cuisine=${props.cuisine}&intolerances=${props.intolerance}&diet=${props.diet}&sort=${props.sortButton}&number=12&offset=0&addRecipeInformation=true&apiKey=00963ead543544ac90beddb936f6a7ac`
+        `https://api.spoonacular.com/recipes/complexSearch?query=${
+          props.searchQuery
+        }&type=${
+          props.course
+        }&includeIngredients=${addIngredients.toString()}&cuisine=${
+          props.cuisine
+        }&intolerances=${props.intolerance}&diet=${props.diet}&sort=${
+          props.sortButton
+        }&number=12&offset=0&addRecipeInformation=true&apiKey=00963ead543544ac90beddb936f6a7ac`
       );
       if (!response.ok) {
         throw new Error("Ooops!");
@@ -39,7 +50,7 @@ const Cards = (props) => {
       }
 
       setRecipes(loadedRecipes);
-
+      setIsLoading(false);
       console.log(results);
       console.log(responseData);
 
@@ -50,11 +61,29 @@ const Cards = (props) => {
     getRecipes().catch((error) => {
       setHttpError(error.message);
     });
-  }, [amount, addIngredients, pageCount, props.searchQuery, props.course, props.cuisine, props.diet, props.intolerance, props.sortButton]);
+  }, [
+    amount,
+    addIngredients,
+    pageCount,
+    props.searchQuery,
+    props.course,
+    props.cuisine,
+    props.diet,
+    props.intolerance,
+    props.sortButton,
+  ]);
 
   const fetchRecipes = async (currentPage) => {
     const response = await fetch(
-      `https://api.spoonacular.com/recipes/complexSearch?query=${props.searchQuery}&type=${props.course}&includeIngredients=${addIngredients.toString()}&cuisine=${props.cuisine}&intolerances=${props.intolerance}&diet=${props.diet}&sort=${props.sortButton}&number=12&offset=${currentPage}&addRecipeInformation=true&apiKey=00963ead543544ac90beddb936f6a7ac`
+      `https://api.spoonacular.com/recipes/complexSearch?query=${
+        props.searchQuery
+      }&type=${
+        props.course
+      }&includeIngredients=${addIngredients.toString()}&cuisine=${
+        props.cuisine
+      }&intolerances=${props.intolerance}&diet=${props.diet}&sort=${
+        props.sortButton
+      }&number=12&offset=${currentPage}&addRecipeInformation=true&apiKey=00963ead543544ac90beddb936f6a7ac`
     );
     const responseData = await response.json();
     const loadedRecipes = [];
@@ -81,10 +110,23 @@ const Cards = (props) => {
     console.log(currentPage);
   };
 
-  if(amount === 0) {
-    return <section>
-      <p>Can't find anything</p>
-    </section>
+  if (isLoading) {
+    return (
+      <div className={classes.cards}>
+        <LoadingSpinner />
+      </div>
+    );
+  }
+
+  if (amount === 0) {
+    return (
+      <div className={classes.cards}>
+        <div  className={classes.cards__error}>
+          <img src={photo} />
+          <p>Couldn't find anything...</p>
+        </div>
+      </div>
+    );
   }
 
   if (httpError) {
@@ -94,7 +136,7 @@ const Cards = (props) => {
       </section>
     );
   }
-  console.log(memoizedRecipes)
+  console.log(memoizedRecipes);
   return (
     <div className={classes.cards}>
       <ul className={classes.cards_recipes}>
