@@ -1,16 +1,17 @@
 .ingridients {
     border-radius: 12px;
-    background-color: #fff5d7;
+    background-color: #fff3d7;
     width: 420px;
     height: 400px;
 }
 
 .ingridients__header {
-    background-color: #ffdc72;
+    background-color: #FFB300;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
     font-size: 18px;
     padding: 1px 20px;
+    color: #fff;
 }
 
 @media (max-width: 440px) {

@@ -1,5 +1,5 @@
 .help__question {
-    background-color: #f8fbff;
+    background-color: #f1fce8;
     border-radius: 12px;
     width: 676px;
     padding: 12px 20px;
@@ -13,7 +13,7 @@
 }
 
 .help__question-block {
-    border-top: 3px dashed #CCE2FF;
+    border-top: 3px dashed #258325;
     padding-top: 15px;
 }
 

@@ -5,10 +5,11 @@
 }
 
 .help__title-frame {
-    background-color: #cce2ff;
+    background-color: #258325;
     border-radius: 12px;
     padding: 12px 20px;
     margin-bottom: 20px;
+    color: #fff;
 }
 
 

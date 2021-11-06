@@ -37,8 +37,16 @@ const CardsMenuFilters = (props) => {
     "wheat",
   ];
   const diets = ["ketogenic", "vegetarian", "vegan", "paleo"];
+  const resetInputs = () => {
+    props.setCourse("");
+    props.setCuisine("");
+    props.setDiet("");
+    props.setIntolerance("");
+    props.setMinCalories("");
+    props.setMaxCalories("");
+  }
   return (
-    <div className={classes.cardsmenufilters} style={props.style}>
+    <form className={classes.cardsmenufilters} style={props.style}>
       <div className={classes["cardsmenufilters-buttons"]}>
         <div >
           <span className={classes.cardsmenufilters_title}>Course</span>
@@ -147,8 +155,9 @@ const CardsMenuFilters = (props) => {
           </div>
         </div>
       </div>
+      <button type="reset" onClick={resetInputs} className={classes["cardsmenufilters-reset"]}>&times; Clear All</button>
       <button type="submit" className={classes["cardsmenufilters-btn"]}>Apply</button>
-    </div>
+    </form>
   );
 };
 

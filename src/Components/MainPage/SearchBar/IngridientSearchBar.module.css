@@ -34,7 +34,7 @@ padding: 7px 36px;
 .searchform__input:active,
 .searchform__input:focus {
     outline:none;
-    border: 2px solid #ffdc50;
+    border: 2px solid #FFB300;
 }
 
 .searchbtn {
