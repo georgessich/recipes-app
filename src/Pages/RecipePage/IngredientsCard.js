@@ -15,7 +15,7 @@ const IngredientsCard = (props) => {
       openFullList === "active" ? "Show Full List" : "Hide Full List"
     );
     setButtonPosition(
-        openFullList === "active" ? "80%" : "92%"
+        openFullList === "active" ? "80%" : "95%"
     );
     setRotate (
         openFullList === 'active' ? 'rotate(0deg)' : 'rotate(180deg)'

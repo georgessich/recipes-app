@@ -1,6 +1,8 @@
+import classes from './HeaderMenu.module.css';
 const HeaderMenuLogo = () => {
   return (
     <svg
+    className={classes['header__menu-logo']}
       width="131"
       height="53"
       viewBox="0 0 131 53"

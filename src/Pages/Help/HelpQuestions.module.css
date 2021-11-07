@@ -29,6 +29,6 @@
 
 @media (max-width: 440px) {
     .help__question {
-        width: 380px;
+        width: 85%;
     }
 }

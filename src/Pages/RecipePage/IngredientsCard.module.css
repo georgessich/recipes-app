@@ -34,7 +34,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #FFB300;
+  color: #fff;
+
 }
 
 .ingredientscard-ingr {
@@ -57,7 +61,8 @@
 .ingredientscard-btn {
   /* margin: 10px auto; */
   border: none;
-  background-color: #ffdc72;
+  background-color: #FFB300;
+  color: #fff;
   border-radius: 12px;
   padding: 8px 20px;
   font-family: "DM Sans";
@@ -76,14 +81,19 @@
 
 @media (max-width: 440px) {
 
+  .ingregients-container {
+    width: 373px;
+  }
+
   .ingredientscard {
     width: 90%;
     left:5%;
   }
 
   .ingredientscard-btn {
-    width: 90%;
-    left: 10%;
+    width: 60%;
+    left: 25%;
     justify-content: center;
+    border-radius: 20px;
   }
 }

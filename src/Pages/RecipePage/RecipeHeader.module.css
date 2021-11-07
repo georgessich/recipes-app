@@ -1,5 +1,5 @@
 .recipeheader {
-    background-color: #cce2ff;
+    background-color: #258325;
     border-radius: 12px;
     display: flex;
 
@@ -11,17 +11,18 @@
     font-weight: 400;
     font-size: 24px;
     padding: 21px;
+    color: #fff;
 }
 
 .recipeheader__prep {
     font-size: 14px;
-    color: rgba(0,0,0, .5);
+    color: #fff;
     margin-right: 25px;
 }
 
 .recipeheader__time {
     font-size: 14px;
-    color: #000000;
+    color: #fff;
 }
 
 @media (max-width: 440px) {

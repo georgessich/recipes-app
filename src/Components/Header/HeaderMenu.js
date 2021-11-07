@@ -1,19 +1,17 @@
 import HeaderMenuLogo from './HeaderMenuLogo';
 import classes from './HeaderMenu.module.css';
 import { NavLink } from 'react-router-dom';
-
+import DeskNav from './DeskNav';
+import MobileNav from './MobileNav';
 const HeaderMenu = () => {
     return (
         <div className={classes.header__menu}>
             <NavLink to="/recipes-app/"exact><HeaderMenuLogo/></NavLink>
             
-            <nav>
-                <ul className={classes['header__menu-items']}>
-                    <li><NavLink activeClassName={classes['header__link-active']} className={classes['header__menu-link']} to="/recipeapp/favourites/">Recipes</NavLink></li>
-                    <li><NavLink activeClassName={classes['header__link-active']} className={classes['header__menu-link']} to="/recipeapp/blog">Blog</NavLink></li>
-                    <li><NavLink activeClassName={classes['header__link-active']} className={classes['header__menu-link']} to="/recipeapp/help">Help</NavLink></li>
-                </ul>
-            </nav>
+            <div className={classes.header__nav}>
+                <DeskNav />
+                <MobileNav/>
+            </div>
         </div>
     )
 }

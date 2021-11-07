@@ -19,3 +19,39 @@
 .header__link-active {
     font-weight: 600;
 }
+
+.header__nav .MobileNav {
+    display: none;
+}
+
+@media (max-width: 440px) {
+    .header__nav .DeskNav {
+        display: none;
+    }
+
+    .header__nav .MobileNav {
+        display: flex;
+
+        align-items: center;
+        background-color: red;
+    }
+
+    .header__nav .MobileNav .header__menu-items {
+     
+        gap: 30px;
+        position: absolute;
+        right: 5%;
+        top: 8%;
+        font-size: 14px;
+    }
+
+    .header__nav .MobileNav .header__burger {
+        position: absolute;
+        right: 5%;
+        cursor: pointer;
+    }
+
+    .header__menu-logo {
+        width: 120px;
+    }
+}

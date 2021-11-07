@@ -57,17 +57,19 @@
 @media (max-width: 440px) {
   .cards {
     background-color: transparent;
-    width: 420px;
+    width: 100%;
   }
   .cards_recipes {
-    width: 405px;
+    width: 377px;
     gap: 35px;
     padding-top: 0;
+    padding-left: 15px;
   }
   .pagination {
     gap: 20px;
     z-index: 1000;
     padding-bottom: 80px;
+    padding-left: 0;
   }
 
   .cards__error img{

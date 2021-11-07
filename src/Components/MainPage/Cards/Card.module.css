@@ -51,11 +51,11 @@
 
 @media (max-width: 440px) {
   .cardtitle {
-    width: 185px;
+    width: 165px;
   }
   .cardimg {
-    width: 141px;
-    height: 152px;
+    width: 127px;
+    height: 131px;
   }
   .cardicons {
     left: 80%;

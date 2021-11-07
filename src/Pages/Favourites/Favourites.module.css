@@ -104,6 +104,7 @@
     }
 
     .fav__sect {
-        margin-left: 35px;
+        padding-left: 15px;
+        width: 92%;
     }
 }
