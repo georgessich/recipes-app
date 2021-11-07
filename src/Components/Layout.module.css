@@ -8,6 +8,23 @@
         width: 1330px;
     }
 }
+
+@media (max-width: 1320px) {
+    .layout {
+        width: 1105px;
+    }
+}
+
+@media (max-width: 1090px) {
+    .layout {
+        width: 880px;
+    }
+}
+@media (max-width: 870px) {
+    .layout {
+        width: 660px;
+    }
+}
 @media (max-width: 440px) {
     .layout {
         width: 420px;

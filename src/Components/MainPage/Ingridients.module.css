@@ -14,6 +14,21 @@
     color: #fff;
 }
 
+@media (max-width: 1340px) {
+    .ingridients {
+        width: 322px;
+    }
+}
+@media(max-width: 1125px) {
+    .ingridients {
+        width: 298px;
+    }
+}
+@media(max-width: 670px) {
+    .ingridients {
+        width: 240px;
+    }
+}
 @media (max-width: 440px) {
     .ingridients {
         position: fixed;

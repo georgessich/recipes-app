@@ -8,6 +8,7 @@
 
 .cardsmenufilters-buttons {
   display: flex;
+  flex-wrap: wrap;
   gap: 54px;
   padding-top: 20px;
   padding-left: 50px;
@@ -106,14 +107,34 @@
     color: rgba(0, 0, 0, .5);
     margin-left: 25px;
 }
+@media(max-width: 1340px) {
+  .cardsmenufilters {
+      width: 910px;
+      margin-left: 0;
+  }
+}
+@media(max-width: 1250px) {
+  .cardsmenufilters {
+      width: 780px;
+      margin-left: 0;
+  }
+}
+@media(max-width: 1125px) {
+  .cardsmenufilters {
+      width: 580px;
+      margin-left: 0;
+  }
+}
+@media(max-width: 685px) {
+  .cardsmenufilters {
+      width: 399px;
+      margin-left: 0;
+  }
+}
 
 @media (max-width: 440px) {
-  .cardsmenufilters {
+  .cardsmenufilters{
     width: 364px;
-  }
-  .cardsmenufilters-buttons {
-    flex-wrap: wrap;
-    width: 290px;
   }
   .cardsmenufilters-btn {
     left: 65%;

@@ -48,6 +48,30 @@
     top: 10px;
 }
 
+@media(max-width: 1340px) {
+    .cardsmenu {
+        width: 870px;
+        margin-left: 0;
+    }
+}
+@media(max-width: 1250px) {
+    .cardsmenu {
+        width: 740px;
+        margin-left: 0;
+    }
+}
+@media(max-width: 1125px) {
+    .cardsmenu {
+        width: 540px;
+        margin-left: 0;
+    }
+}
+@media(max-width: 685px) {
+    .cardsmenu {
+        width: 359px;
+        margin-left: 0;
+    }
+}
 @media(max-width: 440px) {
     .cardsmenu {
         width: 324px;

@@ -94,14 +94,19 @@
     cursor: pointer;
 }
 
+@media (max-width: 870px) {
+    .favourites__menu {
+        margin-left: 0;
+        width: 89px;
+    }
+}
+ 
 @media (max-width: 440px) {
     .favourites__disp {
         flex-direction: column;
     }
 
-    .favourites__menu {
-        margin-left: 0;
-    }
+    
 
     .fav__sect {
         padding-left: 15px;
